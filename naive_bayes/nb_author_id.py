@@ -12,8 +12,10 @@
     
 import sys
 from time import time
+
+from tools.email_preprocess import preprocess
+
 sys.path.append("../tools/")
-from email_preprocess import preprocess
 
 
 ### features_train and features_test are the features for the training
@@ -21,6 +23,7 @@ from email_preprocess import preprocess
 ### labels_train and labels_test are the corresponding item labels
 features_train, features_test, labels_train, labels_test = preprocess()
 
+naive_
 
 
 

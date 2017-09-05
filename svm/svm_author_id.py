@@ -29,4 +29,23 @@ features_train, features_test, labels_train, labels_test = preprocess()
 
 #########################################################
 
+features_train = features_train[0:len(features_train)]
+labels_train = labels_train[0:len(labels_train)]
 
+from sklearn.svm import SVC
+clf = SVC(kernel="rbf",C=10000.0)
+clf.fit(features_train, labels_train)
+pred = clf.predict(features_test)
+# print(pred[10])
+# print(pred[26])
+# print(pred[50])
+count = 0
+for item in pred:
+    if item == 1:
+        count += 1
+print(count)
+#
+# from sklearn.metrics import accuracy_score
+# acc = accuracy_score(pred, labels_test)
+# print(acc)
+# print(pred)
